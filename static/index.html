@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boberto Schedules Editor</title>
+</head>
+
+<body>
+    <h1>Schedule Editor</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="csvfile" id="csvfile" accept=".csv">
+        <button type="submit">Upload CSV</button>
+    </form>
+
+    <hr>
+    <p id="time"></p>
+
+    <h2>Create New Schedule</h2>
+    <form id="scheduleForm">
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
+
+        <label for="time">Time (HH:MM:SS):</label><br>
+        <input type="text" id="time" name="time" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" placeholder="HH:MM:SS"
+            required><br><br>
+
+        <input type="checkbox" id="useTTS" name="useTTS">
+        <label for="useTTS">Use TTS</label><br><br>
+
+        <button type="submit">Create Schedule</button>
+    </form>
+
+    <hr>
+    <h2>History</h2>
+    <ul id="history"></ul>
+    <hr>
+    <h2>Next</h2>
+    <ul id="next"></ul>
+    <script src="schedule_editor.js"></script>
+    <script src="realtime.js"></script>
+    <script src="utils.js"></script>
+
+</body>
+
+</html>
